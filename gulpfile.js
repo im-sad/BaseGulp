@@ -7,7 +7,6 @@ var gulp         = require('gulp'),
 		del          = require('del'),
 		fs           = require('fs'),
 		watch        = require('gulp-watch'),
-		bower        = require('gulp-bower'),
 		prefixer     = require('gulp-autoprefixer'),
 		uglify       = require('gulp-uglify'),
 		less         = require('gulp-less'),
@@ -70,11 +69,6 @@ gulp.task('webserver', function () {
 // Удаление папки
 gulp.task('clean', function () {
 	del.sync(path.clean);
-});
-
-// Bower
-gulp.task('bower', function() {
-	return bower();
 });
 
 
