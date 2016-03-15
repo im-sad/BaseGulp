@@ -1,11 +1,11 @@
 {
-  "name": "start",
-  "moduleType": [
-    "globals"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "jquery": "^2.*"
-  },
-  "devDependencies": {}
+	"name": "start",
+	"moduleType": [
+		"globals"
+	],
+	"license": "MIT",
+	"dependencies": {
+		"jquery": "^2.*"
+	},
+	"devDependencies": {}
 }
