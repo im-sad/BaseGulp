@@ -2,22 +2,26 @@
 
 // Плагины
 var gulp         = require('gulp'),
+		gutil        = require('gulp-util'),
 		plumber      = require('gulp-plumber'),
+		notify       = require('gulp-notify'),
 		runSequence  = require('run-sequence'),
 		del          = require('del'),
 		fs           = require('fs'),
-		watch        = require('gulp-watch'),
-		prefixer     = require('gulp-autoprefixer'),
-		uglify       = require('gulp-uglify'),
-		less         = require('gulp-less'),
-		pixrem       = require('gulp-pixrem'),
 		rename       = require("gulp-rename"),
-		rigger       = require('gulp-rigger'),
-		cssnano      = require('gulp-cssnano'),
+		watch        = require('gulp-watch'),
+		uglify       = require('gulp-uglify'),
+		fileinclude  = require('gulp-file-include'),
+		sass         = require('gulp-sass'),
+		prefixer     = require('gulp-autoprefixer'),
+		cleanCSS     = require('gulp-clean-css'),
 		csscomb      = require('gulp-csscomb'),
+		pixrem       = require('gulp-pixrem'),
 		imagemin     = require('gulp-imagemin'),
 		pngquant     = require('imagemin-pngquant'),
-		browserSync  = require("browser-sync"),
+		zip          = require('gulp-zip'),
+		rev          = require('gulp-rev-append'),
+		browserSync  = require('browser-sync'),
 		reload       = browserSync.reload;
 
 
@@ -26,23 +30,28 @@ var path = {
 	build: { // Релиз
 			html: 'build/',
 			js: 'build/js/',
+			jsfile: ['build/js/*.js', '!build/js/*.min.js'],
 			css: 'build/css/',
-			style: 'build/css/*.css',
+			style: ['build/css/*.css', '!build/css/*.min.css'],
 			img: 'build/img/',
-			fonts: 'build/fonts/'
+			tmp: 'build/tmp/',
+			fonts: 'build/fonts/',
+			zip: 'build/*',
 	},
 	src: { // Исходники
 			html: 'src/*.html',
-			js: 'src/js/main.js',
-			style: 'src/style/*.less',
+			js: 'src/js/*.js',
+			style: 'src/style/*.scss',
 			img: 'src/img/**/*.*',
+			tmp: 'src/tmp/**/*.*',
 			fonts: 'src/fonts/**/*.*'
 	},
 	watch: { // Изменяющиеся
 			html: 'src/**/*.html',
 			js: 'src/js/**/*.js',
-			style: 'src/style/**/*.less',
+			style: 'src/style/**/*.scss',
 			img: 'src/img/**/*.*',
+			tmp: 'src/tmp/**/*.*',
 			fonts: 'src/fonts/**/*.*'
 	},
 	clean: 'build'
@@ -76,7 +85,8 @@ gulp.task('clean', function () {
 gulp.task('html:build', function () {
 	gulp.src(path.src.html)
 		.pipe(plumber())
-		.pipe(rigger())
+		.pipe(fileinclude())
+		.pipe(rev())
 		.pipe(gulp.dest(path.build.html))
 		.pipe(reload({stream: true}));
 });
@@ -84,55 +94,63 @@ gulp.task('html:build', function () {
 
 // ###Собираем CSS###
 gulp.task('css:build', function () {
-	gulp.src(path.src.style)
-		.pipe(plumber())
-		.pipe(less())
+	return gulp.src(path.src.style)
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(sass())
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}));
 });
-	// Префиксы и стилизация
-	gulp.task('css:comb', function () {
-		gulp.src(path.build.style)
-			.pipe(prefixer({ browsers: ['last 5 versions', '> 2%', 'ie 8'] }))
-			.pipe(pixrem({ rootValue: '10px' }))
-			.pipe(csscomb())
-			.pipe(gulp.dest(path.build.css))
-	});
-		// Сжатие
-		gulp.task('css:nano', function () {
-			gulp.src(path.build.style)
-				.pipe(cssnano()) // Сжимаем
-				.pipe(rename({ suffix: '.min' }))
-				.pipe(gulp.dest(path.build.css)) // Сохраняем сжатую версию
-		});
-		// Таски вместе
-		gulp.task('css:final', function(callback) {
-			runSequence('css:build', 'css:comb', 'css:nano', callback);
-		});
+// Cтилизация
+gulp.task('css:style', function () {
+	return gulp.src(path.build.style)
+		.pipe(plumber())
+		.pipe(prefixer({ browsers: ['last 5 versions', '> 2%', 'ie 8'] }))
+		.pipe(pixrem({ rootValue: '10px' }))
+		.pipe(csscomb())
+		.pipe(gulp.dest(path.build.css))
+		.pipe(reload({stream: true}));
+});
+// Сжатие
+gulp.task('css:min', function () {
+	return gulp.src(path.build.style)
+		.pipe(plumber())
+		.pipe(cleanCSS())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest(path.build.css))
+		.pipe(reload({stream: true}))
+		.pipe(notify('Done! Compile done'));
+});
+
+
+gulp.task('css', function(cb) {
+	runSequence('css:build', 'css:style', 'css:min', cb);
+});
+
+
+
 
 
 // ###Собираем JS###
 gulp.task('js:build', function () {
-	gulp.src(path.src.js) // Ищем main файл
+	return gulp.src(path.src.js) // Ищем main файл
 		.pipe(plumber())
-		.pipe(rigger())
+		.pipe(fileinclude())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}));
 });
-	// Сжатие
-	gulp.task('js:min', function () {
-		gulp.src(path.src.js)
-			.pipe(rigger())
-			.pipe(gulp.dest(path.build.js))
-			.pipe(uglify())
-			.pipe(rename('main.min.js'))
-			.pipe(gulp.dest(path.build.js))
-			.pipe(reload({stream: true}));
-	});
-	// Таски вместе
-	gulp.task('js:final', function(callback) {
-		runSequence('js:build', 'js:min', callback);
-	});
+// Сжатие
+gulp.task('js:min', function () {
+	return gulp.src(path.build.jsfile)
+		.pipe(uglify())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest(path.build.js))
+		.pipe(reload({stream: true}));
+});
+// Таски вместе
+gulp.task('js', function(cb) {
+	runSequence('js:build', 'js:min', cb);
+});
+
 
 
 // ###Собираем изображения###
@@ -146,6 +164,10 @@ gulp.task('img:build', function () {
 		}))
 		.pipe(gulp.dest(path.build.img))
 		.pipe(reload({stream: true}));
+
+		gulp.src(path.src.tmp)
+			.pipe(gulp.dest(path.build.tmp))
+			.pipe(reload({stream: true}));
 });
 
 
@@ -163,12 +185,20 @@ gulp.task('jq:build', function() {
 });
 
 
+// ###Архивируем проект###
+gulp.task('zip', () => {
+    return gulp.src(path.build.zip)
+        .pipe(zip('html.zip'))
+        .pipe(gulp.dest('./'));
+});
+
+
 // Все задачи в массиве
 gulp.task('build', [
 	'clean',
 	'html:build',
-	'js:build',
-	'css:build',
+	'js',
+	'css',
 	'img:build',
 	'fonts:build',
 	'jq:build'
@@ -181,10 +211,10 @@ gulp.task('watch', function(){
 			gulp.start('html:build');
 	});
 	watch([path.watch.style], function(event, cb) {
-			gulp.start('css:build');
+			gulp.start('css');
 	});
 	watch([path.watch.js], function(event, cb) {
-			gulp.start('js:build');
+			gulp.start('js');
 	});
 	watch([path.watch.img], function(event, cb) {
 			gulp.start('img:build');

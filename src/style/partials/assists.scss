@@ -1,0 +1,108 @@
+@import "vars", "mix";
+
+
+
+.clr:after {content:'';display:block;clear:both;width:100%;}
+.accent {color:$accent-color;}
+.muted {color:$muted-color;}
+
+
+// Fluid
+.fluid-embed {
+	& {position:relative;display:block;height:0;padding:0;overflow:hidden;}
+
+	iframe, embed, object, video {position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0;}
+
+	&--16x9 {padding-bottom:56.25%;}
+	&--4x3 {padding-bottom:75%;}
+}
+
+.fluid-img {max-width:100%;
+	img {max-width:100%;height:auto !important;vertical-align:top;}
+}
+
+.fluid-table {display:block;width:100%;min-height:0.01%;overflow-x:auto;
+	table {max-width:100%;width:100%;}
+}
+
+
+// Text
+.float-left {float:left;}
+.float-right {float:right;}
+.overflow {overflow:hidden;}
+
+.text-left {text-align:left;}
+.text-right {text-align:right;}
+.text-center {text-align:center;}
+.text-justify {text-align:justify;}
+.text-lowercase {text-transform: lowercase;}
+.text-uppercase {text-transform: uppercase;}
+
+.flex-justify {display:flex;justify-content:space-between;}
+
+.nobr {white-space:nowrap;}
+
+.bold {font-weight:bold;}
+.italic {font-style:italic;}
+.normal {font-style:normal;font-weight:normal;}
+
+mark, .mark {background-color:#fcf8e3;padding:0.2em;}
+
+.imp {color: red;display: inline-block;font-size: 2rem;vertical-align: top;margin:0 0 0 .5rem;}
+
+
+//Normalize
+.txt {
+	ul, ol {margin:2.5rem}
+	ul {list-style:disc}
+	ol {list-style:decimal}
+	ul ul, ol ul, ul ol, ol ol {margin-bottom: 0;}
+
+
+	p {margin-bottom:2.5rem}
+	img, embed, iframe, object, video {max-width:100%;height:auto !important;}
+
+
+	h1, h2, h3, h4, h5, h6, @at-root .h1, @at-root .h2, @at-root .h3, @at-root .h4, @at-root .h5, @at-root .h6 {margin-bottom:1rem;line-height:1.1;}
+	h1, @at-root .h1 {font-size:2rem;}
+	h2, @at-root .h2 {font-size:1.8rem;}
+	h3, @at-root .h3 {font-size:1.6rem;}
+	h4, @at-root .h4 {font-size:1.4rem;}
+	h5, @at-root .h5 {font-size:1.3rem;}
+	h6, @at-root .h6 {font-size:1.2rem;text-transform:uppercase;}
+}
+
+
+
+//Grid
+.grid {
+	&:after {@include clr;}
+
+
+	&--6 {
+		.grid__item {width:16.6666666667%;}
+		.grid__item:nth-child(6n+1) {clear:both}
+	}
+
+	&--5 {
+		.grid__item {width:20%;}
+		.grid__item:nth-child(5n+1) {clear:both}
+	}
+
+	&--4 {
+		.grid__item {width:25%;}
+		.grid__item:nth-child(4n+1) {clear:both}
+	}
+
+	&--3 {
+		.grid__item {width:33.33333333%;}
+		.grid__item:nth-child(3n+1) {clear:both}
+	}
+
+	&--2 {
+		.grid__item {width:50%}
+		.grid__item:nth-child(2n+1) {clear:both}
+	}
+
+	&__item {box-sizing:border-box;float:left;position:relative;min-height:1px;}
+}

@@ -1,4 +1,1 @@
-/* //= ../../bower_components/svgxuse/svgxuse.min.js */
-  
-
-//= partials/core.js
+@@include('partials/core.js')

@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Font';
+  src: url("../fonts/font.eot");
+  src: url("../fonts/font.eot?#iefix") format("embedded-opentype"), url("../fonts/font.woff2") format("woff2"), url("../fonts/font.woff") format("woff"), url("../fonts/font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, em, strike, strong, s, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, section, time, mark, audio, video, main {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, nav, section, main, menu {
+  display: block; }
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  font: 9.8px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  text-align: left;
+  background: #fff;
+  color: #000;
+  font-size: 140pxpx;
+  font-size: 14pxrem; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+ol, ul {
+  list-style: none; }
+
+img {
+  border: none; }
+
+b, strong {
+  font-weight: bold; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+a {
+  background: transparent;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  color: #5983d5;
+  transition: color 0.2s; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:hover {
+  color: #2851a0; }
+
+a:hover, a:active {
+  outline: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+  empty-cells: show; }
+
+td, td img {
+  vertical-align: top; }
+
+input, textarea, select, button {
+  color: inherit;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="checkbox"] {
+  vertical-align: baseline; }
+
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+button, label, input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer; }
+
+input[type="search"] {
+  -webkit-appearance: textfield; }
+
+button, select {
+  text-transform: none; }
+
+button {
+  overflow: visible; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+.header {
+  background: #000; }
+
+.footer {
+  background: #777; }
+
+.accent {
+  color: #5983d5; }
+
+.clr:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.fluid-embed {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.fluid-embed iframe,
+.fluid-embed embed,
+.fluid-embed object,
+.fluid-embed video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; }
+
+.fluid-embed__16x9 {
+  padding-bottom: 56.25%; }
+
+.fluid-embed__4x3 {
+  padding-bottom: 75%; }
+
+.fluid-img {
+  max-width: 100%; }
+  .fluid-img img {
+    max-width: 100%;
+    height: auto !important;
+    vertical-align: top; }
+
+.fluid-table {
+  display: block;
+  width: 100%;
+  min-height: 0.01%;
+  overflow-x: auto; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.overflow {
+  overflow: hidden; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.txt ul, .txt ol {
+  margin: 2rem; }
+
+.txt ul {
+  list-style: disc; }
+
+.txt ol {
+  list-style: decimal; }
+
+.txt p {
+  margin-bottom: 2rem; }
+
+/* FORMS */
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-webkit-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }

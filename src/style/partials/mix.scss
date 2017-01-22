@@ -1,0 +1,25 @@
+@import "vars";
+
+@mixin font-size($sizeValue) {
+	font-size: ($sizeValue / 10px) + rem;
+}
+
+@mixin clr {content:'';display:table;clear:both;width:100%;}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&::-moz-placeholder {@content}
+	&:-moz-placeholder {@content}
+	&:-ms-input-placeholder {@content}
+}
+
+
+%noselect {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+%text-overflow {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:100%;}

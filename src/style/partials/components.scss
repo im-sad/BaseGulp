@@ -1,0 +1,15 @@
+@import "vars", "mix";
+
+
+//POP
+.popup {
+	& {background: #fff;margin:40px auto;max-width:450px;width:100%;padding:2rem 3rem;position:relative;text-align:left;}
+}
+
+
+//ALERT
+.alert {background:#fff;margin:0 auto 2rem;text-align:center;
+
+	&__title {font-weight:bold;margin-bottom:1rem;line-height:1;}
+	&__text {}
+}

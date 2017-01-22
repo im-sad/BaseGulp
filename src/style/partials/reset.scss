@@ -1,22 +1,22 @@
-@import (reference) "vars.less";
-@import (reference) "mix.less";
+@import "vars", "mix";
 
 
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,img,em,strike,strong,s,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,section,time,mark,audio,video,main {background:transparent;border:0;font-size:100%;margin:0;padding:0;outline:0;vertical-align:baseline;}
 article,aside,details,figcaption,figure,footer,header,nav,section,main,menu {display:block}
 
-html {font-size:@font-base;overflow-y:scroll;-webkit-tap-highlight-color:transparent;}
-body {font:@font-size/@line-height @font;.font-size(@font-size);text-align:left;background:@bg;color:@text-color;}
-html, body {height:100%;width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+html {font-size:$font-base;-webkit-tap-highlight-color:transparent;-webkit-backface-visibility:hidden;}
+body {font:#{$font-size}/#{$line-height} $font;text-align:left;background:$bg;color:$text-color; @include font-size($font-size);}
+html, body {height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
 
 ol, ul {list-style:none}
 img {border:none}
 b, strong {font-weight:bold}
 hr {box-sizing:content-box;height:0;}
+svg:not(:root) {overflow:hidden;}
 
-a {background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;color:@link-color;transition:color 0.2s;}
+a {background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;color:$link-color;transition:color 0.2s;}
 a:focus {outline:thin dotted}
-a:hover {color:@link-color-hover;}
+a:hover {color:$link-color-hover;}
 a:hover, a:active {outline:0}
 
 table {border-collapse:collapse;border-spacing:0;max-width:100%;width:100%;empty-cells:show;}
@@ -35,5 +35,3 @@ button {overflow:visible}
 button, html input[type="button"], input[type="reset"], input[type="submit"] {-webkit-appearance:button;cursor:pointer;}
 button[disabled], html input[disabled] {cursor:default}
 button::-moz-focus-inner, input::-moz-focus-inner {border:0;padding:0;}
-
-svg:not(:root) {overflow:hidden;}
