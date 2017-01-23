@@ -9,7 +9,12 @@
 	&:focus {}
 
 	&--fluid {width:100%;}
+
+	&--sm {padding:1rem;}
+	&--md {padding:1rem 2rem;}
+	&--lg {padding:2rem;}
 }
+
 
 
 /* INPUT */

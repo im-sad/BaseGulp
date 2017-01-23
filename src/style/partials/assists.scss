@@ -40,7 +40,7 @@
 
 .flex-justify {display:flex;justify-content:space-between;}
 
-.nobr {white-space:nowrap;}
+.nowrap {white-space:nowrap;}
 
 .bold {font-weight:bold;}
 .italic {font-style:italic;}
@@ -51,17 +51,37 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 .imp {color: red;display: inline-block;font-size: 2rem;vertical-align: top;margin:0 0 0 .5rem;}
 
 
+// Link
+.link-hover a {text-decoration: none;}
+.link-hover a:hover {text-decoration: underline;}
+
+.link-invert a {text-decoration: underline;}
+.link-invert a:hover {text-decoration: none;}
+
+.link-unhover a{text-decoration: none;}
+.link-unhover a:hover {text-decoration: none;}
+
+
 //Normalize
 .txt {
 	ul, ol {margin:2.5rem}
 	ul {list-style:disc}
 	ol {list-style:decimal}
 	ul ul, ol ul, ul ol, ol ol {margin-bottom: 0;}
+	li {position:relative}
 
 
 	p {margin-bottom:2.5rem}
 	img, embed, iframe, object, video {max-width:100%;height:auto !important;}
 
+	img[style*="float:left"], img[style*="float: left"], img[style*="float :left"], img[style*="float : left"] {margin-right:2rem !important;}
+	img[style*="float:right"], img[style*="float: right"], img[style*="float :right"], img[style*="float : right"] {margin-left:2rem !important;}
+
+
+	p:last-child, ul:last-child {margin-bottom:0}
+
+
+	table {width:100%;max-width:100%;}
 
 	h1, h2, h3, h4, h5, h6, @at-root .h1, @at-root .h2, @at-root .h3, @at-root .h4, @at-root .h5, @at-root .h6 {margin-bottom:1rem;line-height:1.1;}
 	h1, @at-root .h1 {font-size:2rem;}
