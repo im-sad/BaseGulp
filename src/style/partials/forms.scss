@@ -24,14 +24,16 @@
 	&:focus {}
 
 	&--fluid {width:100%;}
+	&.field_error {border-color:red;}
 }
 
 .textarea {
 	@extend .input;
 
 	& {resize:vertical;min-height: 2rem;}
-	&:hover {@extend .input:hover;}
+
 	&--fluid {@extend .input--fluid;}
+	&.field_error {@extend .input.field_error;}
 }
 
 
@@ -39,8 +41,8 @@
 	@extend .input;
 	& {cursor:pointer;}
 
-	&:hover {@extend .input:hover;}
 	&--fluid {@extend .input--fluid;}
+	&.field_error {@extend .input.field_error;}
 }
 
 
