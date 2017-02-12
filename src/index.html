@@ -10,7 +10,7 @@
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <!-- STYLES -->
-<link rel="stylesheet" href="css/main.css?rev=@@hash" />
+<link rel="stylesheet" href="css/main.css" />
 </head>
 
 
@@ -22,14 +22,27 @@
 <!-- FOOTER -->
 @@include('tpl/footer.html')
 
+<!-- FIXED -->
+@@include('tpl/fixed.html')
+
 
 
 
 <!-- SCRIPTS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
-<script src="js/main.js?rev=@@hash"></script>
+<script>
+$(function(){
+	$.get("img/sprite.svg", function(data) {
+		var div = document.createElement("div");
+		div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+		document.body.insertBefore(div, document.body.childNodes[0]);
+	});
+});
+</script>
+
+<script src="js/main.js"></script>
 
 
 

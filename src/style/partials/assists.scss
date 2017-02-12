@@ -78,10 +78,11 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 	img[style*="float:right"], img[style*="float: right"], img[style*="float :right"], img[style*="float : right"] {margin-left:2rem !important;}
 
 
-	p:last-child, ul:last-child {margin-bottom:0}
+	& > p:last-child, & > ul:last-child, & > table:last-child {margin-bottom:0}
 
 
-	table {width:100%;max-width:100%;}
+	table {width:100%;max-width:100%;margin-bottom:2.5rem}
+
 
 	h1, h2, h3, h4, h5, h6, @at-root .h1, @at-root .h2, @at-root .h3, @at-root .h4, @at-root .h5, @at-root .h6 {margin-bottom:1rem;line-height:1.1;}
 	h1, @at-root .h1 {font-size:2rem;}

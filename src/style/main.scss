@@ -6,11 +6,17 @@
 // Main code
 @import "partials/core";
 @import "partials/assists";
+@import "partials/components";
 @import "partials/forms";
 
 
 //Plugins
-//@import "../../bower_components/";
+//@import "plugins/full";
+
+
+//Pages
+@import "pages/index";
+@import "pages/full";
 
 
 // Media queries
