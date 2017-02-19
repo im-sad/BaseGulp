@@ -2,7 +2,7 @@
 
 // Плагины
 var gulp         = require('gulp'),
-		gutil        = require('gulp-util'),
+		//gutil        = require('gulp-util'),
 		plumber      = require('gulp-plumber'),
 		notify       = require('gulp-notify'),
 		runSequence  = require('run-sequence'),
@@ -20,7 +20,6 @@ var gulp         = require('gulp'),
 		imagemin     = require('gulp-imagemin'),
 		pngquant     = require('imagemin-pngquant'),
 		zip          = require('gulp-zip'),
-		rev          = require('gulp-rev-append'),
 		browserSync  = require('browser-sync'),
 		reload       = browserSync.reload;
 
@@ -86,7 +85,6 @@ gulp.task('html:build', function () {
 	gulp.src(path.src.html)
 		.pipe(plumber())
 		.pipe(fileinclude())
-		.pipe(rev())
 		.pipe(gulp.dest(path.build.html))
 		.pipe(reload({stream: true}));
 });
