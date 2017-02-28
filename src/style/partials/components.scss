@@ -4,6 +4,8 @@
 //POP
 .popup {
 	& {background: #fff;margin:40px auto;max-width:450px;width:100%;padding:2rem 3rem;position:relative;text-align:left;}
+
+	&__title {font-weight:bold;display:block;margin-bottom:2rem;}
 }
 
 

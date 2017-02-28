@@ -24,14 +24,16 @@
 	&:focus {}
 
 	&--fluid {width:100%;}
+	&.field_error {border-color:red;}
 }
 
 .textarea {
 	@extend .input;
 
 	& {resize:vertical;min-height: 2rem;}
-	&:hover {@extend .input:hover;}
+
 	&--fluid {@extend .input--fluid;}
+	&.field_error {@extend .input.field_error;}
 }
 
 
@@ -39,9 +41,81 @@
 	@extend .input;
 	& {cursor:pointer;}
 
-	&:hover {@extend .input:hover;}
 	&--fluid {@extend .input--fluid;}
+	&.field_error {@extend .input.field_error;}
 }
+
+
+
+/* RADIO & CHECKBOX */
+$radio-height: 20px;
+$radio-border: #ccc;
+$radio-bg: #1F95DE;
+
+.checkbox, .radio {
+	& {cursor: pointer;position: relative;display: inline-block;vertical-align: middle;line-height: $radio-height;}
+
+	input {vertical-align: top;margin: 0 3px 0 0;width: 17px;height: 17px;}
+
+	//not checked
+	input:not(checked) {position: absolute;opacity: 0;visibility: hidden;}
+
+	& .checkbox__title, & .radio__title {padding-left: ($radio-height + 8px);@extend %noselect;}
+
+	& .checkbox__title:before,  & .radio__title:before {
+		content: '';
+		box-shadow: 0 1px 3px rgba(0,0,0,.1);
+		width: $radio-height;
+		height: $radio-height;
+		line-height: $radio-height;
+		background: #fff;
+		position: absolute;
+		left: 0;
+		top: 0;
+		border-radius: 3px;
+		border: 1px solid $radio-border;
+		box-sizing: border-box;
+		text-align: center;
+		transition: all .1s;
+	}
+
+	& .radio__title:before {border-radius: 50%;}
+
+	&:hover input:not(checked) + .checkbox__title:before, &:hover input:not(checked) + .radio__title:before {border-color: lighten($radio-bg, 20%);}
+
+
+	//checked
+	input:checked {
+		& .checkbox__title:before {
+			content: '\2714';
+			background: #1F95DE;
+			border-color: darken($radio-bg, 2%);
+			color: #fff;
+			font-size: 14px;
+			text-shadow: 1px 1px 0 rgba(0,0,0,.05);
+		}
+
+		& .radio__title:after {
+			content: '';
+			background: #1F95DE;
+			position: absolute;
+			left: 5px;
+			top: 5px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+		}
+	}
+
+	&:hover input:checked + .checkbox__title:before {border-color: darken($radio-bg, 15%);}
+	&:hover input:checked + .radio__title:before {border-color: darken($radio-bg, 2%);}
+
+
+	//focus
+	& input:focus + .checkbox__title:before, & input:focus + .radio__title:before {box-shadow: 0 0 0 2px lighten($radio-bg, 40%);}
+}
+
 
 
 

@@ -26,5 +26,7 @@
     "imagemin-pngquant": "^4.2.0",
     "run-sequence": "^1.1.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp-sass": "^2.3.2"
+  }
 }

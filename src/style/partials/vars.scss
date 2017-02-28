@@ -5,8 +5,9 @@ $text-color: #000;
 
 $main-color: #f5da5a;
 $accent-color: #5983d5;
+$muted-color: lighten($main-color, 20%);
 
-$path: '../img';
+$p: '../img';
 
 
 // Links
@@ -33,5 +34,5 @@ $Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 // Fonts
 $font: $Arial;
 $font-base: 62.5%;
-$font-size: 14px;  
+$font-size: 14px;
 $line-height: 1.428571429; // 20px ÷ @font-size
