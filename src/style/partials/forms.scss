@@ -5,8 +5,8 @@
 	@extend %noselect;
 
 	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:1;text-align:center;transition:all .3s;color:$text-color;position:relative;bottom:0;box-sizing:border-box;}
-	&:hover {color:$text-color;text-decoration:none;cursor:pointer;}
-	&:focus {}
+	&:hover:not(.no-hover) {color:$text-color;text-decoration:none;cursor:pointer;}
+	&:active {}
 
 	&--fluid {width:100%;}
 

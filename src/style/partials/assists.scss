@@ -40,7 +40,7 @@
 
 .flex-justify {display:flex;justify-content:space-between;}
 
-.nowrap {white-space:nowrap;}
+.no-wrap {white-space:nowrap;}
 
 .bold {font-weight:bold;}
 .italic {font-style:italic;}
@@ -99,3 +99,7 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 .h4 {font-size:1.4rem;}
 .h5 {font-size:1.3rem;}
 .h6 {font-size:1.2rem;text-transform:uppercase;}
+
+.no-border {border:0;
+	td, th, tr {border:0;}
+}
