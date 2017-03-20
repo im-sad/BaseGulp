@@ -23,6 +23,10 @@
 	&:hover {}
 	&:focus {}
 
+	&--sm {padding:1rem;}
+	&--md {padding:1rem 2rem;}
+	&--lg {padding:2rem;}
+
 	&--fluid {width:100%;}
 	&.field_error {border-color:red;}
 }
@@ -30,7 +34,11 @@
 .textarea {
 	@extend .input;
 
-	& {resize:vertical;min-height: 2rem;}
+	& {resize:vertical;min-height: 2rem;height: 6rem;}
+
+	&--sm {@extend .input--sm;}
+	&--md {@extend .input--md;}
+	&--lg {@extend .input--lg;}
 
 	&--fluid {@extend .input--fluid;}
 	&.field_error {@extend .input.field_error;}

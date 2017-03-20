@@ -82,6 +82,7 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 
 
 	table {width:100%;max-width:100%;margin-bottom:2.5rem}
+	td, th {vertical-align:top;}
 
 
 	h1 {@extend .h1;}
@@ -103,3 +104,5 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 .no-border {border:0;
 	td, th, tr {border:0;}
 }
+
+.no-outline {outline:none !important;}

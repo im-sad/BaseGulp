@@ -1,6 +1,15 @@
 @import "vars", "mix";
 
 
+//TITLE
+.title {display:block;font-weight:bold;margin-bottom:2rem;
+	&--h1 {}
+	&--h2 {}
+}
+
+
+
+
 //ICNS
 .icnSvg {display:inline-block;vertical-align:center;height:2rem;width:2rem;color:currentColor; @extend %noselect;}
 
