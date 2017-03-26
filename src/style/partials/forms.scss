@@ -1,19 +1,17 @@
 @import "vars", "mix";
 
-/* BTNS */
-.btn {
-	@extend %noselect;
+/* FORMS */
+.form {
+	&__row {margin-bottom: 2rem;}
+	&__row:last-child {margin-bottom: 0;}
+	&__row--send {margin-top:3rem;}
+	&__row--half {width: 50%;float: left;box-sizing: border-box;padding-right: 1rem;}
+	&__row--half + &__row--half {padding-left: 1rem;padding-right: 0;}
 
-	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:1;text-align:center;transition:all .3s;color:$text-color;position:relative;bottom:0;box-sizing:border-box;}
-	&:hover:not(.no-hover) {color:$text-color;text-decoration:none;cursor:pointer;}
-	&:active {}
-
-	&--fluid {width:100%;}
-
-	&--sm {padding:1rem;}
-	&--md {padding:1rem 2rem;}
-	&--lg {padding:2rem;}
+	&__label {display: block;line-height: 1;margin-bottom: 1rem;font-size: 1.3rem;}
 }
+
+.imp {color: red;display: inline-block;font-size: 2rem;vertical-align: top;margin:0 0 0 .5rem;}
 
 
 
@@ -48,6 +46,10 @@
 .select {
 	@extend .input;
 	& {cursor:pointer;}
+
+	&--sm {@extend .input--sm;}
+	&--md {@extend .input--md;}
+	&--lg {@extend .input--lg;}
 
 	&--fluid {@extend .input--fluid;}
 	&.field_error {@extend .input.field_error;}
@@ -122,18 +124,4 @@ $radio-bg: #1F95DE;
 
 	//focus
 	& input:focus + .checkbox__title:before, & input:focus + .radio__title:before {box-shadow: 0 0 0 2px lighten($radio-bg, 40%);}
-}
-
-
-
-
-/* FORMS */
-.form {
-	&__row {margin-bottom: 2rem;}
-	&__row:last-child {margin-bottom: 0;}
-	&__row--send {margin-top:3rem;}
-	&__row--half {width: 50%;float: left;box-sizing: border-box;padding-right: 1rem;}
-	&__row--half + &__row--half {padding-left: 1rem;padding-right: 0;}
-
-	&__label {display: block;line-height: 1;margin-bottom: 1rem;font-size: 1.3rem;}
 }

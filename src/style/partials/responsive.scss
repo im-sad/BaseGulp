@@ -1,9 +1,7 @@
 @import "vars", "mix";
 
-@-moz-viewport {width:device-width}
+
 @-ms-viewport {width:device-width}
-@-webkit-viewport {width:device-width}
-@viewport {width:device-width}
 
 //Desktop
 @media (max-width: 1200px) {
@@ -15,7 +13,12 @@
 }
 
 @media (max-width: 960px) {
-
+	.h1 {font-size:2vw *1.1;}
+	.h2 {font-size:1.8vw *1.1;}
+	.h3 {font-size:1.6vw *1.1;}
+	.h4 {font-size:1.4vw *1.1;}
+	.h5 {font-size:1.3vw *1.1;}
+	.h6 {font-size:1.2vw *1.1;}
 }
 
 @media (max-width: 768px) {
