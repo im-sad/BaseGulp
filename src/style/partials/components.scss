@@ -2,16 +2,26 @@
 
 
 //TITLE
-.title {display:block;font-weight:bold;margin-bottom:2rem;
-	&--h1 {}
-	&--h2 {}
+.title {
+	& {display:block;font-weight:bold;cursor:default;}
+
+
+	&--h1 {margin-bottom:2rem;}
+	&--h2 {margin-bottom:2rem;}
 }
 
 
 
 
 //ICNS
-.icnSvg {display:inline-block;vertical-align:middle;height:2rem;width:2rem;color:currentColor; @extend %noselect;}
+.icnSvg {
+	& {display:inline-block;vertical-align:middle;color:currentColor; @extend .no-select;}
+
+	&--15 {width:1.5rem;height:1.5rem;}
+	&--20 {height:2rem;width:2rem;}
+	&--25 {height:2.5rem;width:2.5rem;}
+	&--30 {height:3rem;width:3rem;}
+}
 
 
 //POP
@@ -23,7 +33,7 @@
 
 
 //ALERT
-.alert {background:#eee;margin:0 auto 2rem;text-align:center;border-radius:3px;padding:2rem;
+.alert {background:#eee;margin:0 auto;text-align:center;border-radius:3px;padding:2rem;
 
 	&__title {font-weight:bold;margin-bottom:1rem;line-height:1;display:block;}
 	&__text {}

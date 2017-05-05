@@ -53,14 +53,3 @@ $line-height: 1.5;
 	&:-moz-placeholder {@content}
 	&:-ms-input-placeholder {@content}
 }
-
-
-%noselect {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-
-%text-overflow {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:100%;}

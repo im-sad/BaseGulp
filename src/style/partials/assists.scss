@@ -35,14 +35,14 @@
 .text-right {text-align:right;}
 .text-center {text-align:center;}
 .text-justify {text-align:justify;}
-.text-lower {text-transform: lowercase;}
-.text-upper {text-transform: uppercase;}
 
 .flex-justify {display:flex;justify-content:space-between;}
 
-.bold {font-weight:bold;}
-.italic {font-style:italic;}
-.normal {font-style:normal;font-weight:normal;}
+.font-bold {font-weight:bold;}
+.font-italic {font-style:italic;}
+.font-normal {font-style:normal;font-weight:normal;}
+.font-lower {text-transform: lowercase;}
+.font-upper {text-transform: uppercase;}
 
 mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 
@@ -57,7 +57,10 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 
 .no-outline {outline:none !important;}
 
-.no-select {@extend %noselect;}
+.no-select {user-select: none;}
+
+.no-click {pointer-events:none;}
+
 
 
 //Link
@@ -73,6 +76,8 @@ mark, .mark {background-color:#fcf8e3;padding:0.2em;}
 
 //Normalize
 .txt {
+	&:after {@include clr;}
+
 	ul, ol {margin:2.5rem}
 	ul {list-style:disc}
 	ol {list-style:decimal}
@@ -172,3 +177,5 @@ $step: 20;
 .p-30 {padding:3rem;}.pl-30 {padding-left:3rem;}.pt-30 {padding-top:3rem;}.pr-30 {padding-right:3rem;}.pb-30 {padding-bottom:3rem;}
 .p-35 {padding:3.5rem;}.pl-35 {padding-left:3.5rem;}.pt-35 {padding-top:3.5rem;}.pr-35 {padding-right:3.5rem;}.pb-35 {padding-bottom:3.5rem;}
 .p-40 {padding:4rem;}.pl-40 {padding-left:4rem;}.pt-40 {padding-top:4rem;}.pr-40 {padding-right:4rem;}.pb-40 {padding-bottom:4rem;}
+.p-45 {padding:4.5rem;}.pl-45 {padding-left:4.5rem;}.pt-45 {padding-top:4.5rem;}.pr-45 {padding-right:4.5rem;}.pb-45 {padding-bottom:4.5rem;}
+.p-50 {padding:5rem;}.pl-50 {padding-left:5rem;}.pt-50 {padding-top:5rem;}.pr-50 {padding-right:5rem;}.pb-50 {padding-bottom:5rem;}
