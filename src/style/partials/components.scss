@@ -15,7 +15,7 @@
 
 //ICNS
 .icnSvg {
-	& {display:inline-block;vertical-align:middle;color:currentColor; @extend .no-select;}
+	& {display:inline-block;vertical-align:middle;color:currentColor; @extend .no-select;@extend .no-events;}
 
 	&--15 {width:1.5rem;height:1.5rem;}
 	&--20 {height:2rem;width:2rem;}

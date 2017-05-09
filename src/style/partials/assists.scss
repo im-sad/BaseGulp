@@ -3,6 +3,8 @@
 
 .clr:after {content:'';display:block;clear:both;width:100%;}
 
+
+//Colors
 .accent {color:$accent-color;}
 .muted {color:$muted-color;}
 
@@ -36,30 +38,24 @@
 .text-center {text-align:center;}
 .text-justify {text-align:justify;}
 
-.flex-justify {display:flex;justify-content:space-between;}
-
 .font-bold {font-weight:bold;}
 .font-italic {font-style:italic;}
 .font-normal {font-style:normal;font-weight:normal;}
 .font-lower {text-transform: lowercase;}
 .font-upper {text-transform: uppercase;}
 
-mark, .mark {background-color:#fcf8e3;padding:0.2em;}
+mark, .mark {background-color:#fcf8e3;padding:.2em;}
 
 
 
 //No
 .no-wrap {white-space:nowrap;}
-
 .no-border {border:0 !important;
 	td, th, tr {border:0 !important;}
 }
-
 .no-outline {outline:none !important;}
-
 .no-select {user-select: none;}
-
-.no-click {pointer-events:none;}
+.no-events {pointer-events:none;}
 
 
 

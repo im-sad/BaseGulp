@@ -1,11 +1,14 @@
 {
-	"name": "start",
-	"moduleType": [
-		"globals"
-	],
-	"license": "MIT",
-	"dependencies": {
-		"jquery": "^2.*"
-	},
-	"devDependencies": {}
+  "name": "start",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.*",
+    "magnific-popup": "^1.1.0",
+    "baguettebox.js": "^1.8.2",
+    "jquery.maskedinput": "^1.4.1"
+  },
+  "devDependencies": {}
 }

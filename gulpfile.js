@@ -56,6 +56,7 @@ var path = {
 	clean: 'build'
 };
 
+
 // Настройки Browser Sync
 var config = {
 	server: {
@@ -88,6 +89,7 @@ gulp.task('html:build', function () {
 		.pipe(gulp.dest(path.build.html))
 		.pipe(reload({stream: true}));
 });
+
 
 
 // ###Собираем CSS###
