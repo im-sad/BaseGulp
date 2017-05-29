@@ -14,9 +14,9 @@ ol, ul {list-style:none}
 img {border-style:none;}
 b, strong {font-weight:bold}
 
-a {background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;color:$link-color;transition:color 0.2s;-webkit-text-decoration-skip:objects;}
+a {background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;color:$link-color;transition:color 0.5s;-webkit-text-decoration-skip:objects;}
 a:focus {outline:thin dotted}
-a:hover {color:$link-color-hover;}
+a:hover {color:$link-color-hover;transition-duration: 0.2s;}
 a:hover, a:active {outline:0}
 
 table {background-color:transparent;border-collapse:collapse;border-spacing:0;max-width:100%;width:100%;empty-cells:show;}

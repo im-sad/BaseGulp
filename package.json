@@ -24,9 +24,10 @@
     "gulp-zip": "^3.2.0",
     "gulp-rev-append": "^0.1.7",
     "imagemin-pngquant": "^4.2.0",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+		"gulp-wiredep": "^1.2.0"
   },
   "devDependencies": {
-    "gulp-sass": "^2.3.2"
+
   }
 }
