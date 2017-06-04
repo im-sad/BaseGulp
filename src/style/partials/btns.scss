@@ -4,7 +4,8 @@
 .btn {
 	@extend .no-select;
 
-	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:1.25;text-align:center;transition:background .3s;color:$text-color;position:relative;bottom:0;box-sizing:border-box;}
+	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:1.25;text-align:center;transition:background .3s;color:$text-color;position:relative;bottom:0;box-sizing:border-box;touch-action: manipulation;}
+
 	&:hover:not(.no-hover) {text-decoration:none;cursor:pointer;}
 	&:active {}
 	&:disabled {cursor:default;opacity:.7;}
@@ -17,7 +18,11 @@
 }
 
 
-.btnDefault {background:$main-color;}
+.btnDefault {
+	& {background:$main-color;}
+}
 
 
-.btnAccent {background:$accent-color;}
+.btnAccent {
+	& {background:$accent-color;}
+}

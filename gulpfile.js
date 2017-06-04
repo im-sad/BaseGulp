@@ -9,6 +9,7 @@ var gulp         = require('gulp'),
 		del          = require('del'),
 		fs           = require('fs'),
 		rename       = require("gulp-rename"),
+		useref       = require('gulp-useref'),
 		watch        = require('gulp-watch'),
 		uglify       = require('gulp-uglify'),
 		fileinclude  = require('gulp-file-include'),
@@ -92,6 +93,7 @@ gulp.task('html:build', function () {
 			optional: 'configuration',
 			goes: 'here'
 		}))
+		.pipe(useref())
 		.pipe(gulp.dest(path.build.html))
 		.pipe(reload({stream: true}));
 });
