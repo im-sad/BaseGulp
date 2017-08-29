@@ -4,11 +4,11 @@
 .btn {
 	@extend .no-select;
 
-	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:1.25;text-align:center;transition:background .3s;color:$text-color;position:relative;bottom:0;box-sizing:border-box;touch-action: manipulation;}
+	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:$btn-line-heigh;text-align:center;transition:background .3s;color:$text-color;position:relative;bottom:0;box-sizing:border-box;touch-action: manipulation;}
 
-	&:hover:not(.no-hover) {text-decoration:none;cursor:pointer;}
-	&:active {}
-	&:disabled {cursor:default;opacity:.7;}
+	&:hover:not(.no-hover), &--hover {text-decoration:none;cursor:pointer;}
+	&:active, &--active {}
+	&:disabled, &--disabled {cursor:default;opacity:.7;}
 
 	&--fluid {width:100%;}
 

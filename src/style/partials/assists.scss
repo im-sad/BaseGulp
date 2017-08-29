@@ -5,8 +5,9 @@
 
 
 //Colors
-.accent {color:$accent-color;}
-.muted {color:$muted-color;}
+.color-accent {color:$accent-color;}
+.color-main {color:$main-color;}
+.color-muted {color:$muted-color;}
 
 
 //Fluid
@@ -81,7 +82,7 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 	li {position:relative}
 
 
-	p {margin-bottom:2.5rem}
+	p {@extend .p;}
 	img, embed, iframe, object, video {max-width:100%;height:auto !important;}
 
 	img[style*="float:left"], img[style*="float: left"], img[style*="float :left"], img[style*="float : left"] {margin-right:2rem !important;}
@@ -110,6 +111,9 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 .h4 {font-size:1.4rem;}
 .h5 {font-size:1.3rem;}
 .h6 {font-size:1.2rem;text-transform:uppercase;}
+
+.p {margin-bottom:2.5rem;}
+
 
 
 //Display

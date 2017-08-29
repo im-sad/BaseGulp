@@ -15,6 +15,13 @@ $link-color: $accent-color;
 $link-color-hover: darken($link-color, 20%);
 
 
+//Colors
+$input-border: #ccc;
+
+
+
+
+
 //Fonts family
 $Arial: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 $ArialBlack: "Arial Black", "Helvetica CY", "Nimbus Sans L" sans-serif;
@@ -31,11 +38,16 @@ $Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
 $Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 
 
+
+
 // Fonts
 $font: $Arial;
 $font-base: 62.5%;
 $font-size: 16px;
 $line-height: 1.5;
+
+$btn-line-heigh: 1.25;
+$form-line-height: 1.25;
 
 
 
