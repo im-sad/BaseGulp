@@ -2,12 +2,12 @@
 
 <defs>
 
-<symbol id="left" viewBox="0 0 48 48">
-<path class="path1" d="M30.83 32.67l-9.17-9.17 9.17-9.17-2.83-2.83-12 12 12 12z"/><path class="path1" d="M0-.5h48v48h-48z" fill="none"/>
+<symbol id="icn-left" viewBox="0 0 48 48">
+<path d="M30.83 32.67l-9.17-9.17 9.17-9.17-2.83-2.83-12 12 12 12z"/><path class="path1" d="M0-.5h48v48h-48z" fill="none"/>
 </symbol>
 
-<symbol id="right" viewBox="0 0 48 48">
-<path class="path1" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path class="path1" d="M0-.25h48v48h-48z" fill="none"/>
+<symbol id="icn-right" viewBox="0 0 48 48">
+<path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path class="path1" d="M0-.25h48v48h-48z" fill="none"/>
 </symbol>
 
 
