@@ -14,7 +14,7 @@ ol, ul {list-style:none}
 img {border-style:none;}
 b, strong {font-weight:bold}
 
-a {background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;text-decoration-skip:spaces;color:$link-color;transition:color 0.5s;-webkit-text-decoration-skip:objects;}
+a {color:$link-color;background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;text-decoration-skip:spaces;transition:color 0.5s;-webkit-text-decoration-skip:objects;}
 a:focus {outline:thin dotted}
 a:hover {color:$link-color-hover;transition-duration: 0.2s;}
 a:hover, a:active {outline:0}
@@ -22,7 +22,7 @@ a:hover, a:active {outline:0}
 table {background-color:transparent;border-collapse:collapse;border-spacing:0;max-width:100%;width:100%;empty-cells:show;}
 td, td img {vertical-align:top}
 
-hr {box-sizing: content-box;height:0;overflow:visible;margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba($text-color, 0.1);}
+hr {box-sizing: content-box;height:0;overflow:visible;margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid $hr-color;}
 
 svg:not(:root) {overflow:hidden;}
 audio, video {display:inline-block;}

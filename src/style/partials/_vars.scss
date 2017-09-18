@@ -1,22 +1,22 @@
 // Base
 $w: 1000px;
 $bg: #fff;
-$text-color: #000;
-
-$main-color: #f5da5a;
-$accent-color: #5983d5;
-$muted-color: lighten($main-color, 20%);
-
 $p: '../img';
 
 
-// Links
+//Colors
+$main-color: #f5da5a;
+$accent-color: #5983d5;
+$hr-color: #ccc;
+$muted-color: lighten($main-color, 20%);
+
+
+//Colors-text
+$text-color: #333;
+$text-black: #000;
+$text-white: #fff;
 $link-color: $accent-color;
 $link-color-hover: darken($link-color, 20%);
-
-
-//Colors
-$input-border: #ccc;
 
 
 //Fonts family
@@ -35,9 +35,7 @@ $Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
 $Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 
 
-
-
-// Fonts
+// Fonts options
 $font: $Arial;
 $font-base: 62.5%;
 $font-size: 16px;
@@ -45,7 +43,6 @@ $line-height: 1.5;
 
 $btn-line-heigh: 1.25;
 $form-line-height: 1.25;
-
 
 
 

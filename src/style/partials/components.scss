@@ -1,7 +1,7 @@
 @import "_vars";
 
 
-//TITLE
+//TITLES
 .title {
 	& {display:block;font-weight:bold;cursor:default;}
 
@@ -25,7 +25,8 @@
 }
 
 
-//POP
+
+//POPS
 .popup {
 	& {background: #fff;margin:40px auto;max-width:450px;width:100%;padding:2rem 3rem;position:relative;text-align:left;box-sizing:border-box;}
 
@@ -33,9 +34,13 @@
 }
 
 
-//ALERT
+//ALERTS
 .alert {
-	& {background:#eee;margin:0 auto;text-align:center;border-radius:3px;padding:2rem;}
+	& {margin:0 auto;text-align:center;border-radius:3px;padding:2rem;border:1px solid $hr-color;}
+
+	&--main {background:$main-color;}
+	&--accent {background:$accent-color;}
+
 
 	&__title {font-weight:bold;margin-bottom:1rem;line-height:1;display:block;}
 	&__text {}

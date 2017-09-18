@@ -57,18 +57,19 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 .no-outline {outline:none !important;}
 .no-select {user-select: none;}
 .no-events {pointer-events:none;}
+.no-decoration {text-decoration:none !important;}
 
 
 
 //Link
-.link-hover a {text-decoration: none;}
-.link-hover a:hover {text-decoration: underline;}
+.links-hover a {text-decoration: none;}
+.links-hover a:hover {text-decoration: underline;}
 
-.link-invert a {text-decoration: underline;}
-.link-invert a:hover {text-decoration: none;}
+.links-invert a {text-decoration: underline;}
+.links-invert a:hover {text-decoration: none;}
 
-.link-unhover a {text-decoration: none;}
-.link-unhover a:hover {text-decoration: none;}
+.links-unhover a {text-decoration: none;}
+.links-unhover a:hover {text-decoration: none;}
 
 
 //Normalize
