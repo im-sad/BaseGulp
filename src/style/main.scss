@@ -1,26 +1,29 @@
-// Base
+//Base
 //@import "partials/fonts";
 @import "partials/reset";
 
 
-// Main code
+//Core
+@import "partials/components"; //компоненты сначала, чтоб не перебивать основные стили
 @import "partials/core";
-@import "partials/assists";
-@import "partials/components";
+
+//Pages
+@import "pages/index";
+@import "pages/full";
+
+//Elements
 @import "partials/forms";
 @import "partials/btns";
-
 
 //Plugins
 @import "plugins/bootstrap";
 @import "plugins/magnific_animations";
 
 
-//Pages
-@import "pages/index";
-@import "pages/full";
+//Helpres
+@import "partials/assists"; //асисты в конце, чтоюб перебивать стили
 
 
-// Media queries
+//Other
 @import "partials/responsive";
 @import "partials/print";
