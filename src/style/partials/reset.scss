@@ -30,7 +30,7 @@ audio:not([controls]) {display:none;height:0;}
 
 [hidden] {display:none;}
 
-input, textarea, select, button {color:inherit;font:inherit;line-height:inherit;font-size:100%;margin:0;vertical-align:baseline;}
+input, textarea, select, button {color:inherit;font:inherit;line-height:$form-line-height;font-size:100%;margin:0;vertical-align:baseline;}
 textarea {overflow:auto;vertical-align:top;resize:vertical;}
 input {line-height:normal}
 input[type="checkbox"], input[type="radio"] {box-sizing:border-box;padding:0;}

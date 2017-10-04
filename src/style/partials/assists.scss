@@ -20,11 +20,13 @@
 	&--4x3 {padding-bottom:75% !important;}
 }
 
-.fluid-img {max-width:100%;
+.fluid-img {
+	& {max-width:100%;}
 	img {max-width:100%;vertical-align:top;}
 }
 
-.fluid-table {display:block;width:100%;min-height:0.01%;overflow-x:auto;
+.fluid-table {
+	& {display:block;width:100%;min-height:0.01%;overflow-x:auto;}
 	table {max-width:100%;width:100%;}
 }
 
@@ -121,6 +123,7 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 .d-block {display:block;}
 .d-inline {display:inline;}
 .d-iblock {display:inline-block;}
+
 
 
 //Font

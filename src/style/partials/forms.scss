@@ -33,12 +33,12 @@ form.loading {
 
 
 /* INPUT */
-.input {border:1px solid $input-border;box-sizing:border-box;transition:border .3s, box-shadow .3s;outline:none !important;line-height:$form-line-height;background:#fff;
+.input {border:1px solid $hr-color;box-sizing:border-box;transition:border .3s, box-shadow .3s;outline:none !important;line-height:$form-line-height;background:#fff;vertical-align:middle;line-height:$form-line-height;
 
 	&:hover {}
 	&:focus {}
 
-	&--sm {padding:1rem;}
+	&--sm {padding:.5rem 1rem;}
 	&--md {padding:1rem 2rem;}
 	&--lg {padding:2rem;}
 
@@ -52,7 +52,7 @@ form.loading {
 	& {resize:vertical;min-height: 2rem;height: 6rem;}
 
 	&--sm {@extend .input--sm;}
-	&--md {@extend .input--md;}
+	&--md {@extend .input--md;min-height:10rem;}
 	&--lg {@extend .input--lg;}
 
 	&--fluid {@extend .input--fluid;}
@@ -64,9 +64,9 @@ form.loading {
 	@extend .input;
 	& {cursor:pointer;}
 
-	&--sm {@extend .input--sm;}
-	&--md {@extend .input--md;}
-	&--lg {@extend .input--lg;}
+	&--sm {@extend .input--sm;height: calc(3rem + 2px);}
+	&--md {@extend .input--md;height: calc(4rem + 2px);}
+	&--lg {@extend .input--lg;height: calc(6rem + 2px);}
 
 	&--fluid {@extend .input--fluid;}
 	&.has-danger {@extend .input.has-danger;}

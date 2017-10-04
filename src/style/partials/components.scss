@@ -5,7 +5,6 @@
 .title {
 	& {display:block;font-weight:bold;cursor:default;}
 
-
 	&--h1 {margin-bottom:2rem;}
 	&--h2 {margin-bottom:2rem;}
 }
@@ -14,8 +13,8 @@
 
 
 //ICNS
-.icnSvg {
-	& {display:inline-block;vertical-align:middle;fill:currentColor; @extend .no-select;@extend .no-events;}
+.icnSvg {@extend .no-select;@extend .no-events;
+	& {display:inline-block;vertical-align:middle;fill:currentColor;}
 
 	&--10 {width:1rem;height:1rem;}
 	&--15 {width:1.5rem;height:1.5rem;}
@@ -28,7 +27,7 @@
 
 //POPS
 .popup {
-	& {background: #fff;margin:40px auto;max-width:450px;width:100%;padding:2rem 3rem;position:relative;text-align:left;box-sizing:border-box;}
+	& {background: #fff;margin:40px auto;max-width:450px;width:100%;padding:2rem 3rem;position:relative;text-align:left;}
 
 	&__title {font-weight:bold;display:block;margin-bottom:2rem;}
 }

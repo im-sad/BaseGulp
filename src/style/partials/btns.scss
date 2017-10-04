@@ -4,7 +4,8 @@
 .btn {
 	@extend .no-select;
 
-	& {display:inline-block;text-decoration:none;vertical-align:middle;border:0;line-height:$btn-line-heigh;text-align:center;transition:background .3s;position:relative;bottom:0;box-sizing:border-box;touch-action: manipulation;}
+	& {display:inline-block;text-decoration:none;vertical-align:middle;line-height:$btn-line-heigh;text-align:center;transition:background .3s;position:relative;bottom:0;box-sizing:border-box;touch-action:manipulation;border:1px solid transparent;}
+	//1px border для равной с инпутом высоты
 
 	&:hover:not(.no-hover), &--hover {text-decoration:none;cursor:pointer;}
 	&:active, &--active {}
@@ -12,13 +13,13 @@
 
 	&--fluid {width:100%;}
 
-	&--sm {padding:1rem;}
+	&--sm {padding:.5rem 1rem;}
 	&--md {padding:1rem 2rem;}
 	&--lg {padding:2rem;}
 }
 
 
-.btnDefault {
+.btnMain {
 	& {background:$main-color;color:$text-color;}
 }
 
