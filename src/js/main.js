@@ -23,12 +23,11 @@ $(function(){
 		}
 	});
 
-
-
 	$(document).on('click', '.mfp-close', function (e) {
 			e.preventDefault();
 			$.magnificPopup.close();
 	});
+
 
 
 	//TEL

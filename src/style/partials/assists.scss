@@ -1,12 +1,11 @@
 @import "_vars";
 
-
 .clr:after {content:'';display:block;clear:both;width:100%;}
 
 
 //Colors
-.color-accent {color:$accent-color;}
 .color-main {color:$main-color;}
+.color-accent {color:$accent-color;}
 .color-muted {color:$muted-color;}
 
 
@@ -122,7 +121,7 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 //Display
 .d-block {display:block;}
 .d-inline {display:inline;}
-.d-iblock {display:inline-block;}
+.d-iblock {display:inline-block;vertical-align:middle;}
 
 
 
