@@ -1,5 +1,12 @@
 @import "_vars";
 
+:root {
+	--main-color: $main-color;
+	--accent-color: $accent-color;
+}
+
+@-ms-viewport {width:device-width}
+
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,img,em,strike,strong,s,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,section,time,mark,audio,video,main {background:transparent;border:0;font-size:100%;margin:0;padding:0;outline:0;vertical-align:baseline;}
 article,aside,details,figcaption,figure,footer,header,nav,section,main,menu {display:block}
 
@@ -11,7 +18,7 @@ html, body {height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;
 *, *:before, *:after {box-sizing:inherit;}
 
 ol, ul {list-style:none}
-img {border-style:none;}
+img {border-style:none;vertical-align:middle; @extend .no-select;}
 b, strong {font-weight:bold}
 
 a {color:$link-color;background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;text-decoration-skip:spaces;transition:color 0.5s;-webkit-text-decoration-skip:objects;}
@@ -19,8 +26,14 @@ a:focus {outline:thin dotted}
 a:hover {color:$link-color-hover;transition-duration: 0.2s;}
 a:hover, a:active {outline:0}
 
+a, area, button, input:not([type="range"]), label, select, textarea, .btn {
+  -ms-touch-action: manipulation;touch-action: manipulation;
+}
+
+
 table {background-color:transparent;border-collapse:collapse;border-spacing:0;max-width:100%;width:100%;empty-cells:show;}
 td, td img {vertical-align:top}
+th {text-align: inherit}
 
 hr {box-sizing: content-box;height:0;overflow:visible;margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid $hr-color;}
 
@@ -29,6 +42,7 @@ audio, video {display:inline-block;}
 audio:not([controls]) {display:none;height:0;}
 
 [hidden] {display:none;}
+[tabindex="-1"]:focus {outline: none !important}
 
 input, textarea, select, button {color:inherit;font:inherit;line-height:$form-line-height;font-size:100%;margin:0;vertical-align:baseline;}
 textarea {overflow:auto;vertical-align:top;resize:vertical;}
