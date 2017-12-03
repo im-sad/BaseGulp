@@ -4,7 +4,7 @@
 .btn {
 	@extend .no-select;
 
-	& {display:inline-block;text-decoration:none;vertical-align:middle;line-height:$btn-line-heigh;text-align:center;transition:background .3s;position:relative;bottom:0;box-sizing:border-box;border:1px solid transparent;}
+	& {display:inline-block;text-decoration:none;vertical-align:middle;line-height:$btn-line-heigh;text-align:center;transition:background .3s;position:relative;bottom:0;box-sizing:border-box;border:1px solid transparent;max-width:100%;opacity:1;}
 	//1px border для равной с инпутом высоты
 
 	&:hover:not(.no-hover), &--hover {text-decoration:none;cursor:pointer;}
@@ -17,6 +17,7 @@
 	&--md {padding:1rem 2rem;}
 	&--lg {padding:2rem;}
 }
+
 
 
 .btnMain {

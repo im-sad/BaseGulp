@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -37,17 +37,18 @@
 
 
 <!-- SCRIPTS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
 <script>
-$(function(){
-	$.get("img/sprite.svg", function(data) {
-		var div = document.createElement("div");
-		div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
-		document.body.insertBefore(div, document.body.childNodes[0]);
-	});
-});
+var ajax = new XMLHttpRequest();
+ajax.open("GET", "img/sprite.svg", true);
+ajax.send();
+ajax.onload = function(e) {
+  var div = document.createElement("div");
+  div.innerHTML = ajax.responseText;
+  document.body.insertBefore(div, document.body.childNodes[0]);
+}
 </script>
 
 <!-- build:js js/plugins.js -->

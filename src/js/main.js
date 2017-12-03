@@ -1,4 +1,8 @@
 $(function(){
+	//Have JS
+	$('html').removeClass('no-js');
+
+
 
 
 	//MODAL
