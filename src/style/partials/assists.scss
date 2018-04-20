@@ -1,18 +1,17 @@
 @import "_vars";
 
 .clr:after {content:'';display:block;clear:both;width:100%;}
-
+.clear-both {clear:both;}
 
 //Colors
-.color-main {color:$main-color;}
-.color-accent {color:$accent-color;}
-.color-muted {color:$muted-color;}
+.color-main {color:$color-main;}
+.color-accent {color:$color-accent;}
+.color-muted {color:$color-muted;}
 
 
-//Fills
-.fill-main {background:$main-color;}
-.fill-accent {background:$accent-color;}
-.fill-muted {background:$muted-color;}
+//Fill's
+.fill-main {background:$color-main;}
+.fill-accent {background:$color-accent;}
 
 
 //Fluid
@@ -101,7 +100,9 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 
 
 	table {width:100%;max-width:100%;margin-bottom:$base-margin;}
-	td, th {vertical-align:top;}
+	td, th {vertical-align:top;padding:.5em;}
+	th {font-weight:bold;}
+	td {border:1px solid $color-border;}
 
 
 	h1 {@extend .h1;}
@@ -113,12 +114,12 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {margin-bottom:1rem;line-height:1.1;}
-.h1 {font-size:2rem;}
-.h2 {font-size:1.8rem;}
-.h3 {font-size:1.6rem;}
-.h4 {font-size:1.4rem;}
-.h5 {font-size:1.3rem;}
-.h6 {font-size:1.2rem;text-transform:uppercase;}
+.h1, .txt .h1 {font-size:2.8rem;}
+.h2, .txt .h2 {font-size:2.4rem;}
+.h3, .txt .h3 {font-size:2rem;}
+.h4, .txt .h4 {font-size:1.8rem;}
+.h5, .txt .h5 {font-size:1.6rem;}
+.h6, .txt .h6 {font-size:1.4rem;text-transform:uppercase;}
 
 .p {margin-bottom:$base-margin;}
 
@@ -161,6 +162,13 @@ $step: 20;
 .w-50 {width:50%;}
 .w-33 {width:33.3333%;}
 .w-25 {width:25%;}
+
+//Height
+.height-xs {height:$padd-xs;}
+.height-sm {height:$padd-sm;}
+.height-md {height:$padd-md;}
+.height-lg {height:$padd-lg;}
+.height-xl {height:$padd-xl;}
 
 
 //Size

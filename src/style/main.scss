@@ -5,23 +5,24 @@
 
 //Core
 @import "partials/components"; //компоненты сначала, чтоб не перебивать основные стили
-@import "partials/core";
+@import "partials/core"; // хэдер, футер
+
+//Elements
+@import "partials/forms"; //элементы сначала, чтоб не перебивать основные стили
+@import "partials/btns";
+
 
 //Pages
 @import "pages/index";
 @import "pages/full";
 
-//Elements
-@import "partials/forms";
-@import "partials/btns";
-
 //Plugins
-@import "plugins/bootstrap";
-@import "plugins/magnific_animations";
+//@import "plugins/bootstrap";
+//@import "plugins/magnific_animations";
 
 
 //Helpres
-@import "partials/assists"; //асисты в конце, чтоюб перебивать стили
+@import "partials/assists"; //асисты в конце, для большего приоритета
 
 
 //Other

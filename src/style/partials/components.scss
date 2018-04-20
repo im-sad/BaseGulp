@@ -13,7 +13,7 @@
 
 
 //ICNS
-.icnSvg {@extend .no-select;@extend .no-events;
+svg.icn {@extend .no-select;@extend .no-events;
 	& {display:inline-block;vertical-align:middle;fill:currentColor;}
 }
 
@@ -31,8 +31,8 @@
 .alert {
 	& {margin:0 auto;text-align:center;border-radius:3px;padding:2rem;border:1px solid $hr-color;}
 
-	&--main {background:$main-color;}
-	&--accent {background:$accent-color;}
+	&--main {background:$color-main;}
+	&--accent {background:$color-accent;}
 
 
 	&__title {font-weight:bold;margin-bottom:1rem;line-height:1;display:block;}

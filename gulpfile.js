@@ -125,8 +125,7 @@ gulp.task('css:min', function () {
 		.pipe(cleanCSS())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(path.build.css))
-		.pipe(reload({stream: true}))
-		.pipe(notify('Done! Compile done'));
+		.pipe(reload({stream: true}));
 });
 
 
@@ -170,12 +169,12 @@ gulp.task('img:build', function () {
 				use: [pngquant()],
 				interlaced: true
 		}))
-		.pipe(gulp.dest(path.build.img))
-		.pipe(reload({stream: true}));
+		.pipe(gulp.dest(path.build.img));
 
 		gulp.src(path.src.tmp)
-			.pipe(gulp.dest(path.build.tmp))
-			.pipe(reload({stream: true}));
+			.pipe(gulp.dest(path.build.tmp));
+
+	reload({stream: true});
 });
 
 

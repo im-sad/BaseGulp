@@ -21,10 +21,10 @@
 
 
 .btnMain {
-	& {background:$main-color;color:$text-color;}
+	& {background:$color-main;color:$color-text;}
 }
 
 
 .btnAccent {
-	& {background:$accent-color;color:$text-color;}
+	& {background:$color-accent;color:$color-text;}
 }

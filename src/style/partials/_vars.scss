@@ -1,42 +1,48 @@
 // Base
-$w: 1000px;
+$w: 1200px;
 $bg: #fff;
 $p: '../img';
 
 
 //Colors
-$main-color: #f5da5a;
-$accent-color: #5983d5;
-$hr-color: #ccc;
-$muted-color: lighten($main-color, 20%);
+$color-main: #f5da5a;
+$color-accent: #5983d5;
+$color-muted: lighten($color-main, 20%);
+$color-border: #ccc;
 
 
 //Colors-text
-$text-color: #333;
-$text-black: #000;
-$text-white: #fff;
-$link-color: $accent-color;
-$link-color-hover: darken($link-color, 20%);
+$color-text: #333;
+$color-link: $color-accent;
+$color-link-hover: darken($color-border, 20%);
+
+
+
+//Paddings
+$padd-xs: 10px;
+$padd-sm: 20px;
+$padd-md: 30px;
+$padd-lg: 40px;
+$padd-xl: 50px;
 
 
 //Fonts family
-$Arial: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
-$ArialBlack: "Arial Black", "Helvetica CY", "Nimbus Sans L" sans-serif;
-$ComicSans: "Comic Sans MS", "Monaco CY", cursive;
-$Courier: "Courier New", "Nimbus Mono L", monospace;
-$Georgia: Georgia, "Century Schoolbook L", Serif;
-$Impact: Impact, "Charcoal CY", sans-serif;
-$LucidaConsole: "Lucida Console", Monaco, monospace;
-$LucidaSans: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-$Palatino: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-$Tahoma: Tahoma, "Geneva CY", sans-serif;
-$TimesNew: "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif;
-$Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
-$Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
-
+$font-Arial: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+$font-ArialBlack: "Arial Black", "Helvetica CY", "Nimbus Sans L" sans-serif;
+$font-ComicSans: "Comic Sans MS", "Monaco CY", cursive;
+$font-Courier: "Courier New", "Nimbus Mono L", monospace;
+$font-Georgia: Georgia, "Century Schoolbook L", Serif;
+$font-Impact: Impact, "Charcoal CY", sans-serif;
+$font-LucidaConsole: "Lucida Console", Monaco, monospace;
+$font-LucidaSans: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+$font-Palatino: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$font-Tahoma: Tahoma, "Geneva CY", sans-serif;
+$font-TimesNew: "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif;
+$font-Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
+$font-Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 
 // Fonts options
-$font: $Arial;
+$font: $font-Arial;
 $font-base: 62.5%;
 $font-size: 16px;
 $line-height: 1.5;
@@ -44,7 +50,16 @@ $line-height: 1.5;
 $btn-line-heigh: 1.25;
 $form-line-height: 1.25;
 
-$base-margin: 2rem;
+
+$h1: 3.4rem;
+$h2: 3.2rem;
+$h3: 2.8rem;
+$h4: 2.4rem;
+$h5: 2rem;
+$h6: 1.8rem;
+
+
+
 
 
 //Mixins

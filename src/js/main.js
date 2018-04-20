@@ -1,3 +1,22 @@
+//SCROLL TO
+function scroll2(positon, speed) {
+	if(!positon) {
+		positon = 0;
+	}
+	else {
+		positon = $(positon).offset().top
+	}
+	if(!speed) speed = 500;
+
+	 $('html,body').animate({
+		scrollTop: positon
+	}, speed);
+
+	return false;
+}
+
+
+
 $(function(){
 	//Have JS
 	$('html').removeClass('no-js');
@@ -36,26 +55,5 @@ $(function(){
 
 	//TEL
 	$('.js-tel, input[type="tel"]').mask("+7(999) 999-99-99", {placeholder:"+7(___) ___-__-__"});
-
-
-
-	//SCROLL TO
-	function scroll2(positon, speed) {
-		if(!positon) {
-			positon = 0;
-		}
-		else {
-			positon = $(positon).offset().top
-		}
-		if(!speed) speed = 500;
-
-		 $('html,body').animate({
-			scrollTop: positon
-		}, speed);
-
-		return false;
-	}
-
-
 
 });

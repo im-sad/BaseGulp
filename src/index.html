@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru" class="no-js">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Site Name</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- STYLES -->
-<link rel="stylesheet" href="css/main.css">
-<!-- build:css css/plugins.css -->
-<!-- bower:css --><!-- endbower -->
-<!-- endbuild -->
-</head>
+@@include('tpl/outer/start.html')
 
 
 
 <body>
 <noscript><div class="noJs">Для полноценной работы сайта, необходимо включить JavaScript!</div></noscript>
+
+<script>
+var ajax = new XMLHttpRequest();
+ajax.open("GET", "img/sprite.svg", true);
+ajax.send();
+ajax.onload = function(e) {
+  var div = document.createElement("div");
+  div.innerHTML = ajax.responseText;
+  document.body.insertBefore(div, document.body.childNodes[0]);
+}
+</script>
+
 
 
 <!-- HEADER -->
@@ -40,16 +37,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
-<script>
-var ajax = new XMLHttpRequest();
-ajax.open("GET", "img/sprite.svg", true);
-ajax.send();
-ajax.onload = function(e) {
-  var div = document.createElement("div");
-  div.innerHTML = ajax.responseText;
-  document.body.insertBefore(div, document.body.childNodes[0]);
-}
-</script>
+
 
 <!-- build:js js/plugins.js -->
 <!-- bower:js --><!-- endbower -->
