@@ -1,5 +1,5 @@
-@import "_vars";
-
+@import "../system/_vars";
+/* RESET */
 :root {
 	--color-main: $color-main;
 	--color-accent: $color-accent;
@@ -12,7 +12,7 @@ article,aside,details,figcaption,figure,footer,header,nav,section,main,menu {dis
 
 
 html {font-size:$font-base;-webkit-tap-highlight-color:transparent;-webkit-backface-visibility:hidden;-ms-overflow-style:scrollbar;box-sizing:border-box;}
-body {font:#{$font-size}/#{$line-height} $font;text-align:left;background:$bg;color:$color-text; @include font-size($font-size);}
+body {font:#{$font-size}/#{$line-height} $font;text-align:left;background:$bg;color:$color-text;}
 html, body {height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
 
 *, *:before, *:after {box-sizing:inherit;}
@@ -23,7 +23,7 @@ b, strong {font-weight:bold}
 
 a {color:$color-link;background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;text-decoration-skip:spaces;transition:color 0.5s;text-decoration-skip:objects;}
 a:focus {outline:thin dotted}
-a:hover {color:$color-$color-link-hover;transition-duration: 0.2s;}
+a:hover {color:$color-link-hover;transition-duration: 0.2s;}
 a:hover, a:active {outline:0}
 
 a, area, button, input:not([type="range"]), label, select, textarea, .btn {
@@ -35,7 +35,7 @@ table {background-color:transparent;border-collapse:collapse;border-spacing:0;ma
 td, td img {vertical-align:top}
 th {text-align: inherit}
 
-hr {box-sizing: content-box;height:0;overflow:visible;margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid $hr-color;}
+hr {box-sizing: content-box;height:0;overflow:visible;margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid $color-border;}
 
 svg:not(:root) {overflow:hidden;}
 audio, video {display:inline-block;}

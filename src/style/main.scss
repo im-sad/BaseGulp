@@ -1,30 +1,32 @@
 //Base
-//@import "partials/fonts";
-@import "partials/reset";
+//@import "system/fonts";
+@import "system/reset"; // нормалайз сосёт
 
 
 //Core
-@import "partials/components"; //компоненты сначала, чтоб не перебивать основные стили
-@import "partials/core"; // хэдер, футер
+@import "core/parts"; //сначала, чтоб не перебивать основные стили
+@import "core/core"; // хэдер, футер etc.
+
 
 //Elements
-@import "partials/forms"; //элементы сначала, чтоб не перебивать основные стили
-@import "partials/btns";
+@import "components/forms"; // эл-ты форм
+@import "components/btns"; // кнопки
 
 
-//Pages
-@import "pages/index";
-@import "pages/full";
+//Страницы
+@import "pages/pages";
+@import "pages/index"; //главная
+
 
 //Plugins
-//@import "plugins/bootstrap";
 //@import "plugins/magnific_animations";
+@import "plugins/**/*.scss";
 
 
 //Helpres
-@import "partials/assists"; //асисты в конце, для большего приоритета
+@import "components/assists"; //в конце, для большего приоритета
 
 
 //Other
-@import "partials/responsive";
-@import "partials/print";
+//@import "system/responsive";
+//@import "system/media";

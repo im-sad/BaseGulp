@@ -1,6 +1,13 @@
-@import "_vars";
+@import "../system/_vars";
+
+/* HAVE TOUCH */
+@media (pointer:coarse) {}
+
+/* HAVE CURSOR */
+@media (hover) {}
 
 
+/* PRINT */
 @media print {
     *,
     *:before,

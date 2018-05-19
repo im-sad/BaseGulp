@@ -22,10 +22,8 @@ $(function(){
 	$('html').removeClass('no-js');
 
 
-
-
 	//MODAL
-	$('.js-pop, [data-form]').magnificPopup({
+	$('.js-pop').magnificPopup({
 		type: 'inline',
 		midClick: true,
 		closeBtnInside: true,
@@ -33,7 +31,7 @@ $(function(){
 		alignTop: false,
 		removalDelay: 300,
 		mainClass: 'my-mfp-slide-bottom',
-		focus: 'input:first-child',
+		focus: '.field:first-child',
 
 		callbacks: {
 			beforeOpen: function() {
@@ -50,7 +48,6 @@ $(function(){
 			e.preventDefault();
 			$.magnificPopup.close();
 	});
-
 
 
 	//TEL

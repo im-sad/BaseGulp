@@ -1,0 +1,27 @@
+@import "../system/_vars";
+//Различные блоки
+
+/* TITLES */
+.title {
+	& {display:block;font-weight:bold;cursor:default;clear:both;}
+
+	&--h1 {margin-bottom:$padd-sm;font-size:$h1;}
+	&--h2 {margin-bottom:$padd-sm;font-size:$h2;}
+}
+
+
+
+
+/* ICONS */
+svg.icn {@extend .no-select;@extend .no-events;
+	& {display:inline-block;vertical-align:middle;fill:currentColor;}
+}
+
+
+
+/* POPUPS */
+.popup {
+	& {background: #fff;margin:40px auto;max-width:450px;width:100%;padding:$padd-sm $padd-md;position:relative;text-align:left;}
+
+	&__title {font-weight:bold;display:block;margin-bottom:$padd-sm;}
+}

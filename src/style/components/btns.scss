@@ -1,0 +1,43 @@
+@import "../system/_vars";
+//КНОПКИ
+
+/* BTNS */
+.btn {
+	@extend .no-select;
+
+	& {display:inline-block;text-decoration:none;vertical-align:middle;line-height:$btn-line-heigh;text-align:center;transition:background .3s;position:relative;bottom:0;box-sizing:border-box;border:1px solid transparent;max-width:100%;opacity:1;text-overflow:ellipsis;}
+	//1px border для равной с .field высоты
+
+
+	//state
+	&:hover:not(.no-hover), &--hover {text-decoration:none;cursor:pointer;}
+	&:active, &--active {}
+	&:disabled, &--disabled {cursor:default;opacity:.7;}
+
+	//mod
+	&--fluid {width:100%;display:block;clear:both;}
+
+	//sizes
+	&--xs {}
+	&--sm {padding:.5rem 1rem;}
+	&--md {padding:1rem 2rem;}
+	&--lg {padding:2rem;}
+	&--xl {}
+}
+
+
+
+.btnMain {
+	& {background:$color-main;color:$color-text;}
+
+	&:hover {color:#fff;}
+	&:active {color:#fff;}
+}
+
+
+.btnAccent {
+	& {background:$color-accent;color:$color-text;}
+
+	&:hover {color:#fff;}
+	&:active {color:#fff;}
+}

@@ -1,4 +1,4 @@
-// Base
+//Base
 $w: 1200px;
 $bg: #fff;
 $p: '../img';
@@ -19,11 +19,11 @@ $color-link-hover: darken($color-border, 20%);
 
 
 //Paddings
-$padd-xs: 10px;
-$padd-sm: 20px;
-$padd-md: 30px;
-$padd-lg: 40px;
-$padd-xl: 50px;
+$padd-xs: 1rem;
+$padd-sm: 2rem;
+$padd-md: 3rem;
+$padd-lg: 4rem;
+$padd-xl: 5rem;
 
 
 //Fonts family
@@ -40,6 +40,7 @@ $font-Tahoma: Tahoma, "Geneva CY", sans-serif;
 $font-TimesNew: "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif;
 $font-Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
 $font-Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
+
 
 // Fonts options
 $font: $font-Arial;
@@ -61,13 +62,10 @@ $h6: 1.8rem;
 
 
 
-
 //Mixins
 @mixin font-size($sizeValue) {
-	font-size: ($sizeValue / 10px) + rem;
+	font-size: ($sizeValue / 10px) + rem; //px to rem
 }
-
-@mixin clr {content:'';display:table;clear:both;width:100%;}
 
 @mixin placeholder {
 	&::-webkit-input-placeholder {@content}

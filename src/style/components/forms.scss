@@ -1,47 +1,29 @@
-@import "_vars";
+@import "../system/_vars";
+//ЭЛ-ТЫ ФОРМ
 
 /* FORMS */
 .form {
-	&__row {margin-bottom: 2rem;}
-	&__row:last-child {margin-bottom: 0;}
-	&__row--send {margin-top:3rem;}
+	& {}
 
-	&__label {display: block;line-height: 1;margin-bottom: 1rem;font-size: 1.3rem;}
-}
-
-.imp {color: red;display: inline-block;font-size: 0.7em;vertical-align: top;}
-
-
-
-
-
-/* Load */
-form.loading {
-	& {transtion:all .3s;opacity:.5;position:relative;min-height:5rem;}
-
-	&:before {content:'';border-radius:50%;width:5rem;height:5rem;margin-left:-2.5em;animation: load 1.1s infinite linear;position:absolute;
-		left:50%;top:0;font-size: 10px;z-index:1;
-
-		border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-		border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-		border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-		border-left: 1.1em solid #fff;
+	&__row {
+		& {margin-bottom: $padd-sm;}
+		&:last-child {margin-bottom:0;}
 	}
+
+
+	&__label {display: block;line-height: 1;margin-bottom: $padd-xs;font-size: 1.3rem;}
 }
 
-@keyframes load {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(360deg);}
-}
 
 
-
+/* ANY FIELD */
 .field {
-	& {border:1px solid $hr-color;background:#fff;}
+	& {border:1px solid $color-border;background:#fff;}
 
 	&:hover {}
 	&:focus {}
 }
+
 
 
 /* INPUT */
@@ -61,7 +43,7 @@ form.loading {
 }
 
 
-
+/* TEXTAREA */
 .textarea {
 	@extend .input;
 
@@ -76,6 +58,7 @@ form.loading {
 }
 
 
+/* SELECT */
 .select {
 	@extend .input;
 	& {cursor:pointer;}
@@ -90,6 +73,7 @@ form.loading {
 
 
 
+//https://codepen.io/sadisme/pen/RGpROd
 /* RADIO & CHECKBOX */
 $size: 20px;
 $border-color: #ccc;
@@ -108,10 +92,10 @@ $bg-color: #1F95DE;
 
 /* checkbox */
 .checkbox {
-  & {}
+	& {}
 
   &__title {
-    &:before {content:'\2714';box-shadow: 0 1px 3px rgba(0,0,0,.1);width: $size;height: $size;line-height: $size;background: #fff;left: 0;top: 0;border-radius: 3px;border: 1px solid $border-color;text-align: center;transition: all .1s, font-size .2s;font-size:0;}
+    &:before {content:'';box-shadow: 0 1px 3px rgba(0,0,0,.1);width: $size;height: $size;line-height: $size;left: 0;top: 0;border-radius: 3px;border: 1px solid $border-color;text-align: center;transition: background-color .1s, border-color .1s;font-size:0;background:#fff;}
   }
 
 
@@ -122,7 +106,7 @@ $bg-color: #1F95DE;
   }
 
   //checked
-  input:checked ~ &__title:before {border-color: darken($bg-color, 2%);color: #fff;font-size: 14px;text-shadow: 1px 1px 0 rgba(0,0,0,.05);background:$bg-color;}
+  input:checked ~ &__title:before {border-color: darken($bg-color, 2%);color: #fff;font-size: 14px;text-shadow: 1px 1px 0 rgba(0,0,0,.05);background:$bg-color url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNzAgNzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBvbHlnb24gZmlsbD0iI2ZmZiIgcG9pbnRzPSI0Ny43MTUsMjMuNjg2IDMyLjE1OSwzOS4yNDMgMjIuMjg1LDI5LjM2OSAxOC43NDksMzIuOTA0IDMyLjE1OSw0Ni4zMTQgNTEuMjUxLDI3LjIyMiIvPjwvc3ZnPg==') no-repeat center center;background-size:$size+4px $size+4px;}
 
   //hover
   &:hover input:not(:checked) ~ &__title:before {border-color:lighten($bg-color, 20%);}

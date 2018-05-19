@@ -14,14 +14,17 @@ var gulp         = require('gulp'),
 		uglify       = require('gulp-uglify'),
 		fileinclude  = require('gulp-file-include'),
 		sass         = require('gulp-sass'),
+		sourcemaps   = require('gulp-sourcemaps'),
 		prefixer     = require('gulp-autoprefixer'),
 		cleanCSS     = require('gulp-clean-css'),
 		csscomb      = require('gulp-csscomb'),
-		pixrem       = require('gulp-pixrem'),
 		wiredep      = require('wiredep').stream,
 		imagemin     = require('gulp-imagemin'),
 		pngquant     = require('imagemin-pngquant'),
-		zip          = require('gulp-zip'),
+		svgSprite = require('gulp-svg-sprites'),
+		svgmin = require('gulp-svgmin'),
+		cheerio = require('gulp-cheerio'),
+		replace = require('gulp-replace'),
 		browserSync  = require('browser-sync'),
 		reload       = browserSync.reload;
 
@@ -37,7 +40,6 @@ var path = {
 			img: 'build/img/',
 			tmp: 'build/tmp/',
 			fonts: 'build/fonts/',
-			zip: 'build/*',
 	},
 	src: { // Исходники
 			bower: 'src/*.html',
@@ -72,16 +74,54 @@ var config = {
 	logPrefix: "Frontend"
 };
 
-// Запуск Browser Sync
+
+// Запуск BrowserSync
 gulp.task('webserver', function () {
 	browserSync(config);
 });
 
 
-// Удаление папки
+// Очищаем папки
 gulp.task('clean', function () {
 	del.sync(path.clean);
 });
+
+
+// ###Собираем SVG###
+gulp.task('svgSpriteBuild', function () {
+	return gulp.src('src/img/svg/*.svg')
+		// minify svg
+		.pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		// remove all fill and style declarations in out shapes
+		.pipe(cheerio({
+			run: function ($) {
+				$('[fill]').removeAttr('fill');
+				$('[style]').removeAttr('style');
+			},
+			parserOptions: { xmlMode: false }
+		}))
+		// cheerio plugin create unnecessary string '>', so replace it.
+		.pipe(replace('&gt;', '>'))
+		// build svg sprite
+		.pipe(svgSprite({
+				mode: "symbols",
+				preview: false,
+				selector: "icn-%f",
+				svg: {
+					symbols: 'symbol_sprite.html'
+				}
+			}
+		))
+		.pipe(gulp.dest(path.build.img));
+});
+
+
+
+
 
 
 // ###Собираем HTML###
@@ -90,9 +130,9 @@ gulp.task('html:build', function () {
 		.pipe(plumber())
 		.pipe(fileinclude())
 		.pipe(wiredep({
-			optional: 'configuration',
-			goes: 'here'
-		}))
+      optional: 'configuration',
+      goes: 'here'
+    }))
 		.pipe(useref())
 		.pipe(gulp.dest(path.build.html))
 		.pipe(reload({stream: true}));
@@ -104,17 +144,11 @@ gulp.task('html:build', function () {
 gulp.task('css:build', function () {
 	return gulp.src(path.src.style)
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(gulp.dest(path.build.css))
-		.pipe(reload({stream: true}));
-});
-// Cтилизация
-gulp.task('css:style', function () {
-	return gulp.src(path.build.style)
-		.pipe(plumber())
 		.pipe(prefixer({ browsers: ['last 5 versions', '> 2%', 'ie 8'] }))
-		.pipe(pixrem({ rootValue: '10px' }))
 		.pipe(csscomb())
+		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}));
 });
@@ -128,9 +162,9 @@ gulp.task('css:min', function () {
 		.pipe(reload({stream: true}));
 });
 
-
+// Всё вместе
 gulp.task('css', function(cb) {
-	runSequence('css:build', 'css:style', 'css:min', cb);
+	runSequence('css:build', 'css:min', cb);
 });
 
 
@@ -153,7 +187,8 @@ gulp.task('js:min', function () {
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}));
 });
-// Таски вместе
+
+
 gulp.task('js', function(cb) {
 	runSequence('js:build', 'js:min', cb);
 });
@@ -171,44 +206,44 @@ gulp.task('img:build', function () {
 		}))
 		.pipe(gulp.dest(path.build.img));
 
-		gulp.src(path.src.tmp)
-			.pipe(gulp.dest(path.build.tmp));
+	reload({stream: true});
+});
+
+gulp.task('img:temp', function () {
+	gulp.src(path.src.tmp)
+		.pipe(gulp.dest(path.build.tmp));
+
+	reload({stream: true});
+});
+
+gulp.task('img', function(cb) {
+	runSequence('img:build', 'img:temp', cb);
+});
+
+
+
+
+
+// ###Копируем шрифты###
+gulp.task('fonts', function() {
+	gulp.src(path.src.fonts)
+		.pipe(gulp.dest(path.build.fonts));
 
 	reload({stream: true});
 });
 
 
-// ###Копируем шрифты###
-gulp.task('fonts:build', function() {
-	gulp.src(path.src.fonts)
-		.pipe(gulp.dest(path.build.fonts))
-});
 
-
-// ###Копируем jQuery###
-gulp.task('jq:build', function() {
-	gulp.src('./bower_components/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest(path.build.js))
-});
-
-
-// ###Архивируем проект###
-gulp.task('zip', () => {
-    return gulp.src(path.build.zip)
-        .pipe(zip('html.zip'))
-        .pipe(gulp.dest('./'));
-});
 
 
 // Все задачи в массиве
 gulp.task('build', [
 	'clean',
 	'html:build',
-	'js',
-	'css',
-	'img:build',
-	'fonts:build',
-	'jq:build'
+	'css:build',
+	'js:build',
+	'img',
+	'fonts'
 ]);
 
 
@@ -225,6 +260,9 @@ gulp.task('watch', function(){
 	});
 	watch([path.watch.img], function(event, cb) {
 			gulp.start('img:build');
+	});
+	watch([path.watch.tmp], function(event, cb) {
+			gulp.start('img:temp');
 	});
 	watch([path.watch.fonts], function(event, cb) {
 			gulp.start('fonts:build');
