@@ -240,7 +240,7 @@ gulp.task('fonts', function() {
 gulp.task('build', [
 	'clean',
 	'html:build',
-	'css:build',
+	'css',
 	'js:build',
 	'img',
 	'fonts'
@@ -256,7 +256,7 @@ gulp.task('watch', function(){
 			gulp.start('css');
 	});
 	watch([path.watch.js], function(event, cb) {
-			gulp.start('js');
+			gulp.start('js:build');
 	});
 	watch([path.watch.img], function(event, cb) {
 			gulp.start('img:build');

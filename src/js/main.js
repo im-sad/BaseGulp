@@ -1,11 +1,8 @@
 //SCROLL TO
 function scroll2(positon, speed) {
-	if(!positon) {
-		positon = 0;
-	}
-	else {
-		positon = $(positon).offset().top
-	}
+	if(!positon) positon = 0;
+		else positon = $(positon).offset().top;
+
 	if(!speed) speed = 500;
 
 	 $('html,body').animate({
@@ -35,11 +32,8 @@ $(function(){
 
 		callbacks: {
 			beforeOpen: function() {
-				if($(window).width() < 700) {
-					this.st.focus = false;
-				} else {
-					this.st.focus = 'input:first-child';
-				}
+				if($(window).width() < 700) this.st.focus = false;
+					else this.st.focus = '.field:first-child';
 			}
 		}
 	});
@@ -51,6 +45,6 @@ $(function(){
 
 
 	//TEL
-	$('.js-tel, input[type="tel"]').mask("+7(999) 999-99-99", {placeholder:"+7(___) ___-__-__"});
+	$('.js-tel, input[type="tel"]').mask("+7(999) 999-99-99", { placeholder:"+7(___) ___-__-__" });
 
 });

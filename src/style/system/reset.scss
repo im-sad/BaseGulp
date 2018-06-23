@@ -1,4 +1,4 @@
-@import "../system/_vars";
+@import "../system/_mix", "../system/_vars";
 /* RESET */
 :root {
 	--color-main: $color-main;
@@ -21,16 +21,16 @@ ol, ul {list-style:none}
 img {border-style:none;vertical-align:middle; @extend .no-select;}
 b, strong {font-weight:bold}
 
+//links
 a {color:$color-link;background:transparent;font-size:100%;margin:0;padding:0;vertical-align:baseline;text-decoration-skip:spaces;transition:color 0.5s;text-decoration-skip:objects;}
 a:focus {outline:thin dotted}
 a:hover {color:$color-link-hover;transition-duration: 0.2s;}
 a:hover, a:active {outline:0}
 
-a, area, button, input:not([type="range"]), label, select, textarea, .btn {
-	-ms-touch-action: manipulation;touch-action: manipulation;
-}
+a, area, button, input:not([type="range"]), label, select, textarea, .btn {-ms-touch-action: manipulation;touch-action: manipulation;}
 
 
+//tables
 table {background-color:transparent;border-collapse:collapse;border-spacing:0;max-width:100%;width:100%;empty-cells:show;}
 td, td img {vertical-align:top}
 th {text-align: inherit}
@@ -44,6 +44,7 @@ audio:not([controls]) {display:none;height:0;}
 [hidden] {display:none;}
 [tabindex="-1"]:focus {outline: none !important}
 
+//inputs
 input, textarea, select, button {color:inherit;font:inherit;line-height:$form-line-height;font-size:100%;margin:0;vertical-align:baseline;}
 textarea {overflow:auto;vertical-align:top;resize:vertical;}
 input {line-height:normal}

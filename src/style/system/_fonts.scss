@@ -1,6 +1,4 @@
-@import "_vars";
-
-$fonts: '../fonts';
+@import "../system/_mix", "../system/_vars";
 
 @font-face {
 	font-family: 'Font';

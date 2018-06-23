@@ -1,5 +1,5 @@
-@import "../system/_vars";
-
+@import "../system/_mix", "../system/_vars";
+/* HELPERS */
 .clr:after {content:'';display:block;clear:both;width:100%;}
 
 
@@ -57,15 +57,15 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 
 
 //No
-.no-wrap {white-space:nowrap;}
+.no-wrap {@extend %no-wrap;}
 .no-border {
 	& {border:0 !important;}
 	td, th, tr {border:0 !important;}
 }
-.no-outline {outline:none !important;}
-.no-select {user-select: none;}
-.no-events {pointer-events:none;}
-.no-decoration {text-decoration:none !important;}
+.no-outline {@extend %no-outline;}
+.no-select {@extend %no-select;}
+.no-events {@extend %no-events;}
+.no-decoration {@extend %no-decoration;}
 
 
 

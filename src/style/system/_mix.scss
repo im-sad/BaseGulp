@@ -1,0 +1,19 @@
+//Mixins
+@mixin font-size($sizeValue) {
+	font-size: ($sizeValue / 10px) + rem; //px to rem
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&::-moz-placeholder {@content}
+	&:-moz-placeholder {@content}
+	&:-ms-input-placeholder {@content}
+}
+
+
+//No
+%no-wrap {white-space:nowrap;}
+%no-outline {outline:none !important;}
+%no-select {user-select: none;}
+%no-events {pointer-events:none;}
+%no-decoration {text-decoration:none !important;}

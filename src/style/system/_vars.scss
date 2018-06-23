@@ -1,8 +1,8 @@
 //Base
 $w: 1200px;
 $bg: #fff;
-$p: '../img';
-
+$img: '../img';
+$fonts: '../fonts';
 
 //Colors
 $color-main: #f5da5a;
@@ -42,6 +42,7 @@ $font-Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
 $font-Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 
 
+
 // Fonts options
 $font: $font-Arial;
 $font-base: 62.5%;
@@ -58,18 +59,3 @@ $h3: 2.8rem;
 $h4: 2.4rem;
 $h5: 2rem;
 $h6: 1.8rem;
-
-
-
-
-//Mixins
-@mixin font-size($sizeValue) {
-	font-size: ($sizeValue / 10px) + rem; //px to rem
-}
-
-@mixin placeholder {
-	&::-webkit-input-placeholder {@content}
-	&::-moz-placeholder {@content}
-	&:-moz-placeholder {@content}
-	&:-ms-input-placeholder {@content}
-}
