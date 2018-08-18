@@ -74,7 +74,7 @@ mark, .mark {background-color:#fcf8e3;padding:.2em;}
 .txt {
 	&:after {content:'';clear:both;width:100%;display:table;}
 
-	ul, ol {margin:$padd-md 0 $padd-md $padd-md;}
+	ul, ol {margin:1em 0 1em 1em;}
 	ul {list-style:disc}
 	ol {list-style:decimal}
 	ul ul, ol ul, ul ol, ol ol {margin-bottom: 0;}

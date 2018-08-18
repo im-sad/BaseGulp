@@ -1,7 +1,11 @@
 {
-  "name": "start",
+  "name": "base_gulp",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
   "description": "html+sass",
   "dependencies": {
     "browser-sync": "^2.11.1",
@@ -9,6 +13,7 @@
     "fs": "0.0.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-cheerio": "^0.6.3",
     "gulp-clean-css": "^2.0.13",
     "gulp-csscomb": "^3.0.6",
     "gulp-file-include": "^1.0.0",
@@ -16,19 +21,22 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-rev-append": "^0.1.7",
     "gulp-sass": "^2.3.2",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-svgmin": "^1.2.4",
     "gulp-uglify": "^1.5.2",
+    "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
-    "gulp-rev-append": "^0.1.7",
-    "imagemin-pngquant": "^4.2.0",
-    "run-sequence": "^1.1.5",
     "gulp-wiredep": "^1.2.0",
-    "gulp-useref": "^3.1.2",
-    "gulp-svg-sprites": "^4.1.2",
-		"gulp-svgmin": "^1.2.4"
+    "imagemin-pngquant": "^4.2.0",
+    "run-sequence": "^1.1.5"
   },
   "devDependencies": {
-
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:im-sad/BaseGulp.git",
+  "author": "im-sad <im-sad@ya.ru>",
+  "license": "MIT"
 }

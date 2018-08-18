@@ -24,7 +24,6 @@ var gulp         = require('gulp'),
 		svgSprite = require('gulp-svg-sprites'),
 		svgmin = require('gulp-svgmin'),
 		cheerio = require('gulp-cheerio'),
-		replace = require('gulp-replace'),
 		browserSync  = require('browser-sync'),
 		reload       = browserSync.reload;
 

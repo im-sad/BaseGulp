@@ -10,13 +10,10 @@ $color-accent: #5983d5;
 $color-muted: lighten($color-main, 20%);
 $color-border: #ccc;
 
-
 //Colors-text
 $color-text: #333;
 $color-link: $color-accent;
 $color-link-hover: darken($color-border, 20%);
-
-
 
 //Paddings
 $padd-xs: 1rem;
@@ -24,7 +21,6 @@ $padd-sm: 2rem;
 $padd-md: 3rem;
 $padd-lg: 4rem;
 $padd-xl: 5rem;
-
 
 //Fonts family
 $font-Arial: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
@@ -41,8 +37,6 @@ $font-TimesNew: "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif;
 $font-Trebuchet: "Trebuchet MS", "Helvetica CY", sans-serif;
 $font-Verdana: Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
 
-
-
 // Fonts options
 $font: $font-Arial;
 $font-base: 62.5%;
@@ -51,7 +45,6 @@ $line-height: 1.5;
 
 $btn-line-heigh: 1.25;
 $form-line-height: 1.25;
-
 
 $h1: 3.4rem;
 $h2: 3.2rem;

@@ -1,6 +1,6 @@
 @import "../system/_mix", "../system/_vars";
 
-.w {margin-left:auto;margin-right:auto;max-width:$w;width:100%;}
+.w {margin-left:auto;margin-right:auto;max-width:$w + 20px;padding-left:10px;padding-right:10px;width:100%;flex:0 0 auto;}
 
 .noJs {background:#F47D7D;padding:$padd-xs;text-align:center;color:#fff;font-size:12px;text-shadow:1px 1px 0 rgba(0,0,0,.1);}
 
